@@ -1,0 +1,34 @@
+name: MarkdownViewerNative
+options:
+  bundleIdPrefix: com.meik
+  deploymentTarget:
+    macOS: "15.0"
+configs:
+  Debug: debug
+  Release: release
+settings:
+  base:
+    PRODUCT_NAME: MarkdownViewerNative
+    PRODUCT_BUNDLE_IDENTIFIER: com.meik.MarkdownViewerNative
+    SWIFT_VERSION: "6.0"
+    CODE_SIGN_STYLE: Automatic
+    GENERATE_INFOPLIST_FILE: YES
+    INFOPLIST_KEY_CFBundleDisplayName: MarkdownViewerNative
+    INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.productivity
+    INFOPLIST_KEY_NSHumanReadableCopyright: ""
+    MACOSX_DEPLOYMENT_TARGET: "15.0"
+targets:
+  MarkdownViewerNative:
+    type: application
+    platform: macOS
+    sources:
+      - path: Sources/MarkdownViewerNative
+    settings:
+      base:
+        PRODUCT_MODULE_NAME: MarkdownViewerNative
+        SWIFT_EMIT_LOC_STRINGS: NO
+        LD_RUNPATH_SEARCH_PATHS:
+          - $(inherited)
+          - "@executable_path/../Frameworks"
+scheme:
+  testTargets: []
