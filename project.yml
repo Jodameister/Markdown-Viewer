@@ -2,22 +2,22 @@ name: MarkdownViewerNative
 options:
   bundleIdPrefix: com.meik
   deploymentTarget:
-    macOS: "15.0"
+    macOS: "26.0"
 configs:
   Debug: debug
   Release: release
 settings:
   base:
     ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-    PRODUCT_NAME: MarkdownViewerNative
+    PRODUCT_NAME: "Markdown Viewer"
     PRODUCT_BUNDLE_IDENTIFIER: com.meik.MarkdownViewerNative
     SWIFT_VERSION: "6.0"
     CODE_SIGN_STYLE: Automatic
     GENERATE_INFOPLIST_FILE: YES
-    INFOPLIST_KEY_CFBundleDisplayName: MarkdownViewerNative
+    INFOPLIST_KEY_CFBundleDisplayName: "Markdown Viewer"
     INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.productivity
     INFOPLIST_KEY_NSHumanReadableCopyright: ""
-    MACOSX_DEPLOYMENT_TARGET: "15.0"
+    MACOSX_DEPLOYMENT_TARGET: "26.0"
 packages:
   MarkdownUI:
     url: https://github.com/gonzalezreal/swift-markdown-ui.git
@@ -37,5 +37,13 @@ targets:
         LD_RUNPATH_SEARCH_PATHS:
           - $(inherited)
           - "@executable_path/../Frameworks"
+  MarkdownViewerNativeUITests:
+    type: bundle.ui-testing
+    platform: macOS
+    sources:
+      - path: Tests/MarkdownViewerNativeUITests
+    dependencies:
+      - target: MarkdownViewerNative
 scheme:
-  testTargets: []
+  testTargets:
+    - MarkdownViewerNativeUITests
