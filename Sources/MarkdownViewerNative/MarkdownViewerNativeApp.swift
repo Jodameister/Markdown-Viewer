@@ -1,6 +1,6 @@
 import AppKit
 import Foundation
-import QuickLookUI
+import MarkdownUI
 import SwiftUI
 import UniformTypeIdentifiers
 
@@ -86,7 +86,7 @@ final class AppViewModel: ObservableObject {
     @Published var isRefreshing: Bool = false
     @Published var lastUpdatedText: String?
     @Published var errorMessage: String?
-    @Published var previewRevision: Int = 0
+    @Published var markdownContent: MarkdownContent?
 
     private let fileManager = FileManager.default
     private var monitorTask: Task<Void, Never>?
@@ -302,6 +302,7 @@ final class AppViewModel: ObservableObject {
             selectDocument(first)
         } else {
             activeDocument = nil
+            markdownContent = nil
             outline = []
             lastUpdatedText = nil
             errorMessage = nil
@@ -313,6 +314,7 @@ final class AppViewModel: ObservableObject {
         let url = URL(fileURLWithPath: path)
         do {
             let markdown = try String(contentsOf: url, encoding: .utf8)
+            markdownContent = MarkdownContent(markdown)
             outline = MarkdownOutlineParser.outline(from: markdown)
             let modificationDate = (try? url.resourceValues(forKeys: [.contentModificationDateKey]).contentModificationDate)
             if let modificationDate {
@@ -324,8 +326,8 @@ final class AppViewModel: ObservableObject {
                 lastUpdatedText = nil
             }
             errorMessage = nil
-            previewRevision &+= 1
         } catch {
+            markdownContent = nil
             outline = []
             lastUpdatedText = nil
             errorMessage = error.localizedDescription
@@ -628,14 +630,23 @@ struct DocumentDetailView: View {
                             description: Text(errorMessage)
                         )
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    } else {
-                        ScrollView([.horizontal, .vertical]) {
-                            QuickLookPreview(url: URL(fileURLWithPath: document.path), revision: viewModel.previewRevision)
-                                .frame(minWidth: 840 * viewModel.zoomLevel, minHeight: 900 * viewModel.zoomLevel)
-                                .background(.ultraThinMaterial)
-                                .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-                                .padding(20)
+                    } else if let markdownContent = viewModel.markdownContent {
+                        GeometryReader { proxy in
+                            ZoomableMarkdownPreview(
+                                content: markdownContent,
+                                baseURL: URL(fileURLWithPath: document.directory, isDirectory: true),
+                                zoomLevel: viewModel.zoomLevel,
+                                availableWidth: proxy.size.width
+                            )
+                            .frame(width: proxy.size.width, height: proxy.size.height)
                         }
+                    } else {
+                        ContentUnavailableView(
+                            "Keine Vorschau verfügbar",
+                            systemImage: "doc.text.magnifyingglass",
+                            description: Text("Der Markdown-Inhalt konnte nicht gerendert werden.")
+                        )
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                     }
                 }
             } else {
@@ -665,21 +676,108 @@ struct OutlineView: View {
     }
 }
 
-struct QuickLookPreview: NSViewRepresentable {
-    let url: URL
-    let revision: Int
+private enum PreviewMetrics {
+    static let idealPageWidth: CGFloat = 920
+    static let minimumPageWidth: CGFloat = 560
+    static let pagePadding: CGFloat = 32
+    static let outerPadding: CGFloat = 24
+    static let cornerRadius: CGFloat = 20
 
-    func makeNSView(context: Context) -> QLPreviewView {
-        let preview = QLPreviewView(frame: .zero, style: .normal)!
-        preview.shouldCloseWithWindow = true
-        preview.autostarts = true
-        preview.previewItem = url as NSURL
-        return preview
+    static var horizontalChrome: CGFloat {
+        (pagePadding + outerPadding) * 2
     }
 
-    func updateNSView(_ nsView: QLPreviewView, context: Context) {
-        nsView.previewItem = url as NSURL
-        nsView.refreshPreviewItem()
+    static func pageWidth(for availableWidth: CGFloat) -> CGFloat {
+        let fittedWidth = availableWidth - horizontalChrome
+        return min(idealPageWidth, max(minimumPageWidth, fittedWidth))
+    }
+
+    static func cardWidth(for pageWidth: CGFloat) -> CGFloat {
+        pageWidth + horizontalChrome
+    }
+}
+
+struct MarkdownPageView: View {
+    let content: MarkdownContent
+    let baseURL: URL
+    let availableWidth: CGFloat
+
+    var body: some View {
+        let pageWidth = PreviewMetrics.pageWidth(for: availableWidth)
+        let cardWidth = PreviewMetrics.cardWidth(for: pageWidth)
+
+        Markdown(content, baseURL: baseURL, imageBaseURL: baseURL)
+            .markdownTheme(.gitHub)
+            .textSelection(.enabled)
+            .frame(width: pageWidth, alignment: .leading)
+            .padding(PreviewMetrics.pagePadding)
+            .background(
+                RoundedRectangle(cornerRadius: PreviewMetrics.cornerRadius, style: .continuous)
+                    .fill(Color(nsColor: .textBackgroundColor))
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: PreviewMetrics.cornerRadius, style: .continuous)
+                    .strokeBorder(Color.primary.opacity(0.08), lineWidth: 1)
+            )
+            .padding(PreviewMetrics.outerPadding)
+            .frame(minWidth: max(availableWidth, cardWidth), alignment: .center)
+            .frame(maxHeight: .infinity, alignment: .top)
+    }
+}
+
+struct ZoomableMarkdownPreview: NSViewRepresentable {
+    let content: MarkdownContent
+    let baseURL: URL
+    let zoomLevel: Double
+    let availableWidth: CGFloat
+
+    final class Coordinator {
+        var hostingView: NSHostingView<AnyView>?
+    }
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator()
+    }
+
+    func makeNSView(context: Context) -> NSScrollView {
+        let scrollView = NSScrollView()
+        scrollView.drawsBackground = false
+        scrollView.hasVerticalScroller = true
+        scrollView.hasHorizontalScroller = true
+        scrollView.autohidesScrollers = true
+        scrollView.allowsMagnification = true
+        scrollView.minMagnification = 0.85
+        scrollView.maxMagnification = 1.4
+        let hostingView = NSHostingView(rootView: AnyView(EmptyView()))
+        context.coordinator.hostingView = hostingView
+        scrollView.documentView = hostingView
+        update(scrollView: scrollView, coordinator: context.coordinator)
+        return scrollView
+    }
+
+    func updateNSView(_ nsView: NSScrollView, context: Context) {
+        update(scrollView: nsView, coordinator: context.coordinator)
+    }
+
+    private func update(scrollView: NSScrollView, coordinator: Coordinator) {
+        guard let hostingView = coordinator.hostingView else { return }
+
+        let viewportWidth = max(scrollView.contentSize.width, availableWidth)
+
+        hostingView.rootView = AnyView(
+            MarkdownPageView(
+                content: content,
+                baseURL: baseURL,
+                availableWidth: viewportWidth
+            )
+        )
+        hostingView.layoutSubtreeIfNeeded()
+        hostingView.setFrameSize(hostingView.fittingSize)
+
+        let magnification = CGFloat(zoomLevel)
+        if abs(scrollView.magnification - magnification) > 0.001 {
+            scrollView.setMagnification(magnification, centeredAt: .zero)
+        }
     }
 }
 
