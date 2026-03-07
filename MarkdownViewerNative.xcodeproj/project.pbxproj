@@ -11,7 +11,8 @@
 		39BBC8B23A65C77F6C73EF6A /* MarkdownViewerNativeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2520FC3DEDFCF7DB43742C /* MarkdownViewerNativeApp.swift */; };
 		4CE81BDCA9E7E698C939B8C5 /* MarkdownViewerNativeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6299ECB82189104E362A730 /* MarkdownViewerNativeUITests.swift */; };
 		80F1C76295DEB37D5AE589FF /* notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 80B2AE96C60F1E14EE68EF8B /* notes.md */; };
-		DECDB42B400736BF2CD1A5FA /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = A685A4C52FF23C02CD37FB36 /* MarkdownUI */; };
+		A4DAF13F23EB1EBA032929AB /* cmark-gfm-extensions in Frameworks */ = {isa = PBXBuildFile; productRef = 20854B70B8C1631C3F438DB7 /* cmark-gfm-extensions */; };
+		DECDB42B400736BF2CD1A5FA /* cmark-gfm in Frameworks */ = {isa = PBXBuildFile; productRef = 774FE48F60B899292752DBF1 /* cmark-gfm */; };
 		F9B2BAFC0841908FC331F4C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB92C4E1527803E823AB182 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DECDB42B400736BF2CD1A5FA /* MarkdownUI in Frameworks */,
+				DECDB42B400736BF2CD1A5FA /* cmark-gfm in Frameworks */,
+				A4DAF13F23EB1EBA032929AB /* cmark-gfm-extensions in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +129,8 @@
 			);
 			name = MarkdownViewerNative;
 			packageProductDependencies = (
-				A685A4C52FF23C02CD37FB36 /* MarkdownUI */,
+				774FE48F60B899292752DBF1 /* cmark-gfm */,
+				20854B70B8C1631C3F438DB7 /* cmark-gfm-extensions */,
 			);
 			productName = MarkdownViewerNative;
 			productReference = 48AE427F86F8565F935523A8 /* MarkdownViewerNative.app */;
@@ -180,7 +183,7 @@
 			mainGroup = FFC29F93E38473B858D49035;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				89C1DEA6825D840F742B0427 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				287E516D037B1035856F230B /* XCRemoteSwiftPackageReference "swift-cmark" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1443B507672A0653228F106C /* Products */;
@@ -467,21 +470,26 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		89C1DEA6825D840F742B0427 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+		287E516D037B1035856F230B /* XCRemoteSwiftPackageReference "swift-cmark" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui.git";
+			repositoryURL = "https://github.com/swiftlang/swift-cmark";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.4.1;
+				minimumVersion = 0.7.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A685A4C52FF23C02CD37FB36 /* MarkdownUI */ = {
+		20854B70B8C1631C3F438DB7 /* cmark-gfm-extensions */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 89C1DEA6825D840F742B0427 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
-			productName = MarkdownUI;
+			package = 287E516D037B1035856F230B /* XCRemoteSwiftPackageReference "swift-cmark" */;
+			productName = "cmark-gfm-extensions";
+		};
+		774FE48F60B899292752DBF1 /* cmark-gfm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 287E516D037B1035856F230B /* XCRemoteSwiftPackageReference "swift-cmark" */;
+			productName = "cmark-gfm";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

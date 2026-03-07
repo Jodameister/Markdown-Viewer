@@ -19,9 +19,9 @@ settings:
     INFOPLIST_KEY_NSHumanReadableCopyright: ""
     MACOSX_DEPLOYMENT_TARGET: "26.0"
 packages:
-  MarkdownUI:
-    url: https://github.com/gonzalezreal/swift-markdown-ui.git
-    from: 2.4.1
+  SwiftCMark:
+    url: https://github.com/swiftlang/swift-cmark
+    from: 0.7.1
 targets:
   MarkdownViewerNative:
     type: application
@@ -29,7 +29,10 @@ targets:
     sources:
       - path: Sources/MarkdownViewerNative
     dependencies:
-      - package: MarkdownUI
+      - package: SwiftCMark
+        product: cmark-gfm
+      - package: SwiftCMark
+        product: cmark-gfm-extensions
     settings:
       base:
         PRODUCT_MODULE_NAME: MarkdownViewerNative

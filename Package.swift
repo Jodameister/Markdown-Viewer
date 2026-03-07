@@ -10,13 +10,14 @@ let package = Package(
         .executable(name: "MarkdownViewerNative", targets: ["MarkdownViewerNative"])
     ],
     dependencies: [
-        .package(url: "https://github.com/gonzalezreal/swift-markdown-ui.git", from: "2.4.1")
+        .package(url: "https://github.com/swiftlang/swift-cmark", from: "0.7.1")
     ],
     targets: [
         .executableTarget(
             name: "MarkdownViewerNative",
             dependencies: [
-                .product(name: "MarkdownUI", package: "swift-markdown-ui")
+                .product(name: "cmark-gfm", package: "swift-cmark"),
+                .product(name: "cmark-gfm-extensions", package: "swift-cmark")
             ]
         )
     ]
