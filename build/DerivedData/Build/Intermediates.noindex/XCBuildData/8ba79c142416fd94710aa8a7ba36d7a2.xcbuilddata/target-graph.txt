@@ -1,0 +1,12 @@
+Target dependency graph (5 targets)
+Target 'MarkdownViewerNative' in project 'MarkdownViewerNative'
+➜ Explicit dependency on target 'cmark-gfm' in project 'cmark-gfm'
+➜ Explicit dependency on target 'cmark-gfm-extensions' in project 'cmark-gfm'
+Target 'cmark-gfm-extensions' in project 'cmark-gfm'
+➜ Explicit dependency on target 'cmark-gfm-extensions' in project 'cmark-gfm'
+➜ Explicit dependency on target 'cmark-gfm' in project 'cmark-gfm'
+Target 'cmark-gfm-extensions' in project 'cmark-gfm'
+➜ Explicit dependency on target 'cmark-gfm' in project 'cmark-gfm'
+Target 'cmark-gfm' in project 'cmark-gfm'
+➜ Explicit dependency on target 'cmark-gfm' in project 'cmark-gfm'
+Target 'cmark-gfm' in project 'cmark-gfm' (no dependencies)

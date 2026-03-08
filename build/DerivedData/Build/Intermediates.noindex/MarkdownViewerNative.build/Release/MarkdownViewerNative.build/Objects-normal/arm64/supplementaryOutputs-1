@@ -1,0 +1,12 @@
+{
+  "/Users/meik/Projekte/XCode/MarkdownViewer/Sources/MarkdownViewerNative/ViewModel/AppViewModel+Actions.swift" : {
+    "abi-baseline-json" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerNative.abi.json",
+    "const-values" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerNative-primary.swiftconstvalues",
+    "dependencies" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerNative-primary.d",
+    "diagnostics" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerNative-primary.dia",
+    "objc-header" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerNative-Swift.h",
+    "swiftdoc" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerNative.swiftdoc",
+    "swiftmodule" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerNative.swiftmodule",
+    "swiftsourceinfo" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerNative.swiftsourceinfo"
+  }
+}

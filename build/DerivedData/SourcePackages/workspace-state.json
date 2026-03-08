@@ -1,0 +1,30 @@
+{
+  "object" : {
+    "artifacts" : [
+
+    ],
+    "dependencies" : [
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "swift-cmark",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/swiftlang/swift-cmark",
+          "name" : "swift-cmark"
+        },
+        "state" : {
+          "checkoutState" : {
+            "revision" : "5d9bdaa4228b381639fff09403e39a04926e2dbe",
+            "version" : "0.7.1"
+          },
+          "name" : "sourceControlCheckout"
+        },
+        "subpath" : "swift-cmark"
+      }
+    ],
+    "prebuilts" : [
+
+    ]
+  },
+  "version" : 7
+}

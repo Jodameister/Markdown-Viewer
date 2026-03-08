@@ -1,0 +1,71 @@
+{
+  "" : {
+    "const-values" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerNative-primary.swiftconstvalues",
+    "dependencies" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerNative-primary.d",
+    "diagnostics" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerNative-primary.dia",
+    "emit-module-dependencies" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerNative-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerNative-primary-emit-module.dia",
+    "pch" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerNative-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerNative-primary.swiftdeps"
+  },
+  "/Users/meik/Projekte/XCode/MarkdownViewer/Sources/MarkdownViewerNative/App/MarkdownViewerApp.swift" : {
+    "index-unit-output-path" : "/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerApp.o",
+    "llvm-bc" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerApp.bc",
+    "object" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerApp.o"
+  },
+  "/Users/meik/Projekte/XCode/MarkdownViewer/Sources/MarkdownViewerNative/Preview/HTMLPreviewRenderer.swift" : {
+    "index-unit-output-path" : "/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/HTMLPreviewRenderer.o",
+    "llvm-bc" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/HTMLPreviewRenderer.bc",
+    "object" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/HTMLPreviewRenderer.o"
+  },
+  "/Users/meik/Projekte/XCode/MarkdownViewer/Sources/MarkdownViewerNative/Preview/MarkdownHTMLRenderer.swift" : {
+    "index-unit-output-path" : "/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownHTMLRenderer.o",
+    "llvm-bc" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownHTMLRenderer.bc",
+    "object" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownHTMLRenderer.o"
+  },
+  "/Users/meik/Projekte/XCode/MarkdownViewer/Sources/MarkdownViewerNative/Preview/MarkdownWebPreview.swift" : {
+    "index-unit-output-path" : "/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownWebPreview.o",
+    "llvm-bc" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownWebPreview.bc",
+    "object" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownWebPreview.o"
+  },
+  "/Users/meik/Projekte/XCode/MarkdownViewer/Sources/MarkdownViewerNative/Support/MarkdownLibrarySupport.swift" : {
+    "index-unit-output-path" : "/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownLibrarySupport.o",
+    "llvm-bc" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownLibrarySupport.bc",
+    "object" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownLibrarySupport.o"
+  },
+  "/Users/meik/Projekte/XCode/MarkdownViewer/Sources/MarkdownViewerNative/Support/MarkdownViewerModels.swift" : {
+    "index-unit-output-path" : "/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerModels.o",
+    "llvm-bc" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerModels.bc",
+    "object" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerModels.o"
+  },
+  "/Users/meik/Projekte/XCode/MarkdownViewer/Sources/MarkdownViewerNative/ViewModel/AppViewModel+Actions.swift" : {
+    "index-unit-output-path" : "/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/AppViewModel+Actions.o",
+    "llvm-bc" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/AppViewModel+Actions.bc",
+    "object" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/AppViewModel+Actions.o"
+  },
+  "/Users/meik/Projekte/XCode/MarkdownViewer/Sources/MarkdownViewerNative/ViewModel/AppViewModel+Library.swift" : {
+    "index-unit-output-path" : "/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/AppViewModel+Library.o",
+    "llvm-bc" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/AppViewModel+Library.bc",
+    "object" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/AppViewModel+Library.o"
+  },
+  "/Users/meik/Projekte/XCode/MarkdownViewer/Sources/MarkdownViewerNative/ViewModel/AppViewModel+Persistence.swift" : {
+    "index-unit-output-path" : "/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/AppViewModel+Persistence.o",
+    "llvm-bc" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/AppViewModel+Persistence.bc",
+    "object" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/AppViewModel+Persistence.o"
+  },
+  "/Users/meik/Projekte/XCode/MarkdownViewer/Sources/MarkdownViewerNative/ViewModel/AppViewModel.swift" : {
+    "index-unit-output-path" : "/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/AppViewModel.o",
+    "llvm-bc" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/AppViewModel.bc",
+    "object" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/AppViewModel.o"
+  },
+  "/Users/meik/Projekte/XCode/MarkdownViewer/Sources/MarkdownViewerNative/Views/MarkdownViewerViews.swift" : {
+    "index-unit-output-path" : "/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerViews.o",
+    "llvm-bc" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerViews.bc",
+    "object" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/MarkdownViewerViews.o"
+  },
+  "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/meik/Projekte/XCode/MarkdownViewer/build/DerivedData/Build/Intermediates.noindex/MarkdownViewerNative.build/Release/MarkdownViewerNative.build/Objects-normal/arm64/GeneratedAssetSymbols.o"
+  }
+}
